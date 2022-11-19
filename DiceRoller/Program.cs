@@ -6,8 +6,42 @@ namespace DiceRoller
 {
     internal class Program
     {
-        // get the program to roll two dice until getting two of a kind
         static void Main(string[] args)
+        {
+            
+
+            WriteLine("What is your name?");
+            string? PlayerName = ReadLine();
+
+            WriteLine("\nWelcome to Dice Roll, " + PlayerName + ". " + "Press any key to roll the dice...");
+
+            RollDice(PlayerName);
+        }
+
+        private static void ExitMethod(string? PlayerName)
+        {
+            WriteLine("\nWould you like to try again? Type y and hit enter. Or Type n and hit enter to quit.");
+
+            string? input = ReadLine();
+
+            switch (input)
+            {
+                case "y":
+                    WriteLine("\nPress any key to roll the dice again...");
+                    RollDice(PlayerName);
+                    break;
+                case "n":
+                    WriteLine("Goodbye!")
+                    Environment.Exit(0);
+                    break;
+                default:
+                    WriteLine("Invalid Input. Please Try Again.");
+                    ExitMethod(PlayerName);
+                    break;
+            }
+        }
+
+        private static void RollDice(string? PlayerName)
         {
             Random numberGen = new Random();
 
@@ -15,14 +49,8 @@ namespace DiceRoller
             int roll2 = 1;
             int attempts = 0;
 
-            WriteLine("Hello and welcome to Dice Roll. What is your name?");
-            string? PlayerName = ReadLine();
-
-            WriteLine("\nWelcome to Dice Roll, " + PlayerName + ". " + "Press any key to roll the dice...");
-
             while (roll != roll2)
             {
-                
                 ReadKey();
 
                 roll = numberGen.Next(1, 7);
@@ -33,14 +61,12 @@ namespace DiceRoller
                 attempts++;
 
                 if (roll == roll2)
-                {                      
+                {
                     WriteLine("It took " + PlayerName + " " + attempts + " attempts to roll matching pair.");
                 }
- 
             }
 
-            ReadKey();
+            ExitMethod(PlayerName);
         }
-        
     }
 }
