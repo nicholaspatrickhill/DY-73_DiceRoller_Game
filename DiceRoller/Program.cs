@@ -1,4 +1,5 @@
-﻿using static System.Console;
+﻿using System.Net.Security;
+using static System.Console;
 
 namespace DiceRoller
 
@@ -14,7 +15,10 @@ namespace DiceRoller
             int roll2 = 1;
             int attempts = 0;
 
-            WriteLine("Press any key to roll the dice...");
+            WriteLine("Hello and welcome to Dice Roll. What is your name?");
+            string? PlayerName = ReadLine();
+
+            WriteLine("\nWelcome to Dice Roll, " + PlayerName + ". " + "Press any key to roll the dice...");
 
             while (roll != roll2)
             {
@@ -24,15 +28,15 @@ namespace DiceRoller
                 roll = numberGen.Next(1, 7);
                 roll2 = numberGen.Next(1, 7);
 
-                WriteLine("You rolled a " + roll + " and a " + roll2);
+                WriteLine(PlayerName + " rolled a " + roll + " and a " + roll2);
 
                 attempts++;
 
                 if (roll == roll2)
                 {                      
-                    WriteLine("It took you " + attempts + " attempts to roll matching pair.");
+                    WriteLine("It took " + PlayerName + " " + attempts + " attempts to roll matching pair.");
                 }
-                
+ 
             }
 
             ReadKey();
