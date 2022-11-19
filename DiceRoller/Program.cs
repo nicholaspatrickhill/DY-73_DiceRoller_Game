@@ -11,20 +11,33 @@ namespace DiceRoller
             Random numberGen = new Random();
 
             int roll = 0;
+            int roll2 = 0;
             int attempts = 0;
 
-            WriteLine("Press any key to roll the die...");
+            
 
-            while (roll != 6)
+            while (roll != 6 && roll2 !=6)
             {
+                WriteLine("Press any key to roll the dice...");
                 ReadKey();
 
                 roll = numberGen.Next(1, 7);
-                WriteLine("You rolled: " + roll);
-                attempts++;
+                roll2 = numberGen.Next(1, 7);
+
+                WriteLine("You rolled a " + roll + " and a " + roll2);
+
+                if (roll == roll2)
+                {                    
+                    attempts++;
+                    WriteLine("It took you " + attempts + " attempts to roll matching pair.");
+                }
+                //else (roll != roll2)
+                //{
+
+                //}
             }
 
-            WriteLine("It took you " + attempts + " attempts to roll a six.");
+           
 
 
 
