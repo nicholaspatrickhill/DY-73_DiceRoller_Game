@@ -11,14 +11,14 @@ namespace DiceRoller
             Random numberGen = new Random();
 
             int roll = 0;
-            int roll2 = 0;
+            int roll2 = 1;
             int attempts = 0;
 
-            
+            WriteLine("Press any key to roll the dice...");
 
-            while (roll != 6 && roll2 !=6)
+            while (roll != roll2)
             {
-                WriteLine("Press any key to roll the dice...");
+                
                 ReadKey();
 
                 roll = numberGen.Next(1, 7);
@@ -26,21 +26,14 @@ namespace DiceRoller
 
                 WriteLine("You rolled a " + roll + " and a " + roll2);
 
+                attempts++;
+
                 if (roll == roll2)
-                {                    
-                    attempts++;
+                {                      
                     WriteLine("It took you " + attempts + " attempts to roll matching pair.");
                 }
-                //else (roll != roll2)
-                //{
-
-                //}
+                
             }
-
-           
-
-
-
 
             ReadKey();
         }
