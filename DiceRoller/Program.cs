@@ -10,7 +10,12 @@ namespace DiceRoller
             WriteLine("What is your name?");
             string? PlayerName = ReadLine();
 
-            WriteLine("\nWelcome to Dice Roll, " + PlayerName + ". " + "Press any key to roll the dice...");
+            Thread.Sleep(500);
+            WriteLine("...");
+            Thread.Sleep(1000);
+            WriteLine(".....");
+            Thread.Sleep(1500);
+            WriteLine("Welcome to Dice Roll, " + PlayerName + "! " + "Press any key to roll the dice...");
 
             RollDice(PlayerName);
         }
@@ -28,7 +33,7 @@ namespace DiceRoller
                     RollDice(PlayerName);
                     break;
                 case "n":
-                    WriteLine("Goodbye!");
+                    WriteLine("\nGoodbye!\n\n\n\n\n");
                     Environment.Exit(0);
                     break;
                 default:
@@ -49,17 +54,19 @@ namespace DiceRoller
             while (roll != roll2)
             {
                 ReadKey();
+                Beep();
 
                 roll = numberGen.Next(1, 7);
                 roll2 = numberGen.Next(1, 7);
 
+                Thread.Sleep(500);
                 WriteLine(PlayerName + " rolled a " + roll + " and a " + roll2);
 
                 attempts++;
 
                 if (roll == roll2)
                 {
-                    WriteLine("It took " + PlayerName + " " + attempts + " attempts to roll matching pair.");
+                    WriteLine("\nIt took " + PlayerName + " " + attempts + " attempts to roll a matching pair!");
                 }
             }
 
