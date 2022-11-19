@@ -2,14 +2,11 @@
 using static System.Console;
 
 namespace DiceRoller
-
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            
-
             WriteLine("What is your name?");
             string? PlayerName = ReadLine();
 
@@ -31,7 +28,7 @@ namespace DiceRoller
                     RollDice(PlayerName);
                     break;
                 case "n":
-                    WriteLine("Goodbye!")
+                    WriteLine("Goodbye!");
                     Environment.Exit(0);
                     break;
                 default:
