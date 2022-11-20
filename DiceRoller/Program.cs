@@ -13,7 +13,7 @@ namespace DiceRoller
 
             WriteLine("(Press any key to roll the dice...)");
 
-            RollDice(PlayerName);
+            DoublesDiceGame(PlayerName);
         }
 
         private static void RunIntroScreen()
@@ -52,7 +52,7 @@ namespace DiceRoller
         }
 
 
-        private static void RollDice(string? PlayerName)
+        private static void DoublesDiceGame(string? PlayerName)
         {
             Random numberGen = new Random();
 
@@ -93,7 +93,7 @@ namespace DiceRoller
             {
                 case "y":
                     WriteLine("\nPress any key to roll the dice again...");
-                    RollDice(PlayerName);
+                    DoublesDiceGame(PlayerName);
                     break;
                 case "n":
                     WriteLine("\nGoodbye!\n\n\n\n\n");

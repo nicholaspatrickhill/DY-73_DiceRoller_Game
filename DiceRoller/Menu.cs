@@ -7,74 +7,74 @@ using static System.Console;
 
 namespace DiceRoller
 {
-        public class Menu
+    public class Menu
+    {
+        private int SelectedIndex;
+        private readonly string[] Options;
+        private readonly string Prompt;
+
+        public Menu(string prompt, string[] options)
         {
-            private int SelectedIndex;
-            private readonly string[] Options;
-            private readonly string Prompt;
+            Prompt = prompt;
+            Options = options;
+            SelectedIndex = 0;
+        }
 
-            public Menu(string prompt, string[] options)
+        private void DisplayOptions()
+        {
+            WriteLine(Prompt);
+            for (int i = 0; i < Options.Length; i++)
             {
-                Prompt = prompt;
-                Options = options;
-                SelectedIndex = 0;
-            }
+                string currentOption = Options[i];
 
-            private void DisplayOptions()
-            {
-                WriteLine(Prompt);
-                for (int i = 0; i < Options.Length; i++)
+                if (i == SelectedIndex)
                 {
-                    string currentOption = Options[i];
-
-                    if (i == SelectedIndex)
-                    {
-                        ForegroundColor = ConsoleColor.Black;
-                        BackgroundColor = ConsoleColor.Red;
-                    }
-                    else
-                    {
-                        ForegroundColor = ConsoleColor.White;
-                        BackgroundColor = ConsoleColor.Black;
-                    }
-
-                    WriteLine(currentOption);
+                    ForegroundColor = ConsoleColor.Black;
+                    BackgroundColor = ConsoleColor.Red;
                 }
-                ResetColor();
-            }
-
-            public int Run()
-            {
-                ConsoleKey keyPressed;
-                do
+                else
                 {
-                    Clear();
-                    DisplayOptions();
+                    ForegroundColor = ConsoleColor.White;
+                    BackgroundColor = ConsoleColor.Black;
+                }
 
-                    ConsoleKeyInfo keyInfo = ReadKey(true);
-                    keyPressed = keyInfo.Key;
-
-                    if (keyPressed == ConsoleKey.UpArrow)
-                    {
-                        SelectedIndex--;
-                        if (SelectedIndex == -1)
-                        {
-                            SelectedIndex = Options.Length - 1;
-                        }
-                    }
-                    else if (keyPressed == ConsoleKey.DownArrow)
-                    {
-                        SelectedIndex++;
-                        if (SelectedIndex == Options.Length)
-                        {
-                            SelectedIndex = 0;
-                        }
-                    }
-
-                } while (keyPressed != ConsoleKey.Enter);
-
-                return SelectedIndex;
+                WriteLine(currentOption);
             }
+            ResetColor();
+        }
+
+        public int Run()
+        {
+            ConsoleKey keyPressed;
+            do
+            {
+                Clear();
+                DisplayOptions();
+
+                ConsoleKeyInfo keyInfo = ReadKey(true);
+                keyPressed = keyInfo.Key;
+
+                if (keyPressed == ConsoleKey.UpArrow)
+                {
+                    SelectedIndex--;
+                    if (SelectedIndex == -1)
+                    {
+                        SelectedIndex = Options.Length - 1;
+                    }
+                }
+                else if (keyPressed == ConsoleKey.DownArrow)
+                {
+                    SelectedIndex++;
+                    if (SelectedIndex == Options.Length)
+                    {
+                        SelectedIndex = 0;
+                    }
+                }
+
+            } while (keyPressed != ConsoleKey.Enter);
+
+            return SelectedIndex;
         }
     }
 }
+
