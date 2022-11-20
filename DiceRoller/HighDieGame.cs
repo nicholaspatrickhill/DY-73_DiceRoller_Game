@@ -29,12 +29,12 @@ namespace DY73DiceRoller
             playerRoll = numberGen.Next(1, 7);
 
             Thread.Sleep(500);
-            WriteLine("\nYou rolled a " + playerRoll + ".");
+            WriteLine("\nYou rolled a " + playerRoll);
             Thread.Sleep(1000);
             WriteLine("\nNow it's m-my turn...");
 
             cpuRoll = numberGen.Next(1, 7);
-            WriteLine("\nDY-73 rolled a " + cpuRoll + ".");
+            WriteLine("\nDY-73 rolled a " + cpuRoll);
 
             if (playerRoll == cpuRoll)
             {
