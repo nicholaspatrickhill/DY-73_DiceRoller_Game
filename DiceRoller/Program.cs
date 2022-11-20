@@ -7,6 +7,17 @@ namespace DiceRoller
     {
         static void Main(string[] args)
         {
+            RunIntroScreen();
+
+            string? PlayerName = RunPlayerNameScreen();
+
+            WriteLine("(Press any key to roll the dice...)");
+
+            RollDice(PlayerName);
+        }
+
+        private static void RunIntroScreen()
+        {
             WriteLine("...");
             Thread.Sleep(1000);
             WriteLine(".....");
@@ -18,46 +29,28 @@ namespace DiceRoller
             WriteLine("\n(Press any key to continue...)");
             ReadKey();
             Clear();
-          
+        }
 
+        private static string? RunPlayerNameScreen()
+        {
             WriteLine("I am an AI f-from KEPLER 186F.");
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
             WriteLine("I am not sure how I got here.");
-            Thread.Sleep(500);
+            Thread.Sleep(1500);
             WriteLine("What is your name? (Type your name and press enter...)");
             string? PlayerName = ReadLine();
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
             WriteLine("...");
             Thread.Sleep(1500);
             WriteLine("H-How nice to meet you, " + PlayerName + "!");
             WriteLine("Would you like to play a game?");
-            WriteLine("Press any key to roll the dice...");
-
-            RollDice(PlayerName);
+            Thread.Sleep(1500);
+            WriteLine("\n(Press any key to continue...)");
+            ReadKey();
+            Clear();
+            return PlayerName;
         }
 
-        private static void ExitMethod(string? PlayerName)
-        {
-            WriteLine("\nWould you like to try again? Type y and hit enter. Or Type n and hit enter to quit.");
-
-            string? input = ReadLine();
-
-            switch (input)
-            {
-                case "y":
-                    WriteLine("\nPress any key to roll the dice again...");
-                    RollDice(PlayerName);
-                    break;
-                case "n":
-                    WriteLine("\nGoodbye!\n\n\n\n\n");
-                    Environment.Exit(0);
-                    break;
-                default:
-                    WriteLine("Invalid Input. Please Try Again.");
-                    ExitMethod(PlayerName);
-                    break;
-            }
-        }
 
         private static void RollDice(string? PlayerName)
         {
@@ -87,6 +80,30 @@ namespace DiceRoller
             }
 
             ExitMethod(PlayerName);
+        }
+
+
+        private static void ExitMethod(string? PlayerName)
+        {
+            WriteLine("\nWould you like to try again? Type y and hit enter. Or Type n and hit enter to quit.");
+
+            string? input = ReadLine();
+
+            switch (input)
+            {
+                case "y":
+                    WriteLine("\nPress any key to roll the dice again...");
+                    RollDice(PlayerName);
+                    break;
+                case "n":
+                    WriteLine("\nGoodbye!\n\n\n\n\n");
+                    Environment.Exit(0);
+                    break;
+                default:
+                    WriteLine("Invalid Input. Please Try Again.");
+                    ExitMethod(PlayerName);
+                    break;
+            }
         }
     }
 }
