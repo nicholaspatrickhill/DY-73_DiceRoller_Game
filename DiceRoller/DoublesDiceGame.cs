@@ -5,18 +5,20 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
-using static DY73DiceRoller.IntroScreens;
+using static DY73DiceRoller.ConsoleMessages;
 
 namespace DY73DiceRoller
 {
     public class DoublesDiceGame
     {
-        public static void PlayerDoublesDiceGame()
+        public static void RunDoublesDiceGame()
         {
-            WriteLine("W-Welcome to Doubles!");
-            WriteLine("Roll the dice until you get doubles. Then I'll do the same.");
-            WriteLine("Whoever reaches doubles in the fewest number of rolls wins!");
-            WriteLine("\nPress any key to roll the dice...");
+            ForegroundColor= ConsoleColor.Green;
+            WriteLine("L-let's play Doubles!");
+            Thread.Sleep(1000);
+            WriteLine("Roll the dice until you get d-doubles. Then it's m-my turn.");
+            WriteLine("Whoever g-gets doubles in the fewest number of rolls wins!");
+            WriteLine("\n(Press enter to roll the dice...)");
 
             Random numberGen = new Random();
 
@@ -40,7 +42,7 @@ namespace DY73DiceRoller
                 if (playerRoll1 == playerRoll2)
                 {
                     WriteLine("\nIt took you " + playerAttempts + " attempts to roll a matching pair!");
-                    Thread.Sleep(1500);
+                    Thread.Sleep(1000);
                     WriteLine("\nNow it's m-my turn...");
                     {
                         Random cpuNumberGen = new Random();
@@ -64,34 +66,31 @@ namespace DY73DiceRoller
                                 WriteLine("\nIt took DY-73 " + cpuAttempts + " attempts to roll a matching pair!");
                                 if (playerAttempts == cpuAttempts)
                                 {
-                                    WriteLine("\nDraw! Would you like to play again?");
-                                    ExitMethod();
-                                    Clear();
+                                    Thread.Sleep(1500);
+                                    WriteLine("\nThat's a draw!");
+                                    WriteLine("\n(Press any key to continue...)");
+                                    ReadKey();
+                                    ExitTheProgram();
                                 }
                                 else if (playerAttempts < cpuAttempts)
                                 {
-                                    WriteLine("\nYou win! Would you like to play again?");
-                                    ExitMethod();
-                                    Clear();
+                                    Thread.Sleep(1500);
+                                    WriteLine("\nYou win!");
+                                    WriteLine("\n(Press any key to continue...)");
+                                    ReadKey();
+                                    ExitTheProgram();
+
                                 }
                                 else if (playerAttempts > cpuAttempts)
                                 {
-                                    WriteLine("\nI win! Would you like to play again?");
-                                    ExitMethod();
-                                    Clear();
+                                    Thread.Sleep(1500);
+                                    WriteLine("\nDY-73 wins!");
+                                    WriteLine("\n(Press any key to continue...)");
+                                    ReadKey();
+                                    ExitTheProgram();
                                 }
                             }
-                            if (cpuRoll1 == 1 && cpuRoll2 == 1)
-                            {
-                                WriteLine("\nSnake Eyes! That's an automatic win!");
-                                ExitMethod();
-                            }
                         }
-                    }
-                    if (playerRoll1 == 1 && playerRoll2 == 1)
-                    {
-                        WriteLine("\nSnake Eyes! That's an automatic win!");
-                        ExitMethod();
                     }
                 }
             }

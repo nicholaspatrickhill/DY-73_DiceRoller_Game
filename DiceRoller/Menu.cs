@@ -22,6 +22,7 @@ namespace DiceRoller
 
         private void DisplayOptions()
         {
+            ForegroundColor = ConsoleColor.Green;
             WriteLine(Prompt);
             for (int i = 0; i < Options.Length; i++)
             {
@@ -30,11 +31,11 @@ namespace DiceRoller
                 if (i == SelectedIndex)
                 {
                     ForegroundColor = ConsoleColor.Black;
-                    BackgroundColor = ConsoleColor.Red;
+                    BackgroundColor = ConsoleColor.Green;
                 }
                 else
                 {
-                    ForegroundColor = ConsoleColor.White;
+                    ForegroundColor = ConsoleColor.Green;
                     BackgroundColor = ConsoleColor.Black;
                 }
 
