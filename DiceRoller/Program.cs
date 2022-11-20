@@ -7,15 +7,31 @@ namespace DiceRoller
     {
         static void Main(string[] args)
         {
-            WriteLine("What is your name?");
-            string? PlayerName = ReadLine();
-
-            Thread.Sleep(500);
             WriteLine("...");
             Thread.Sleep(1000);
             WriteLine(".....");
             Thread.Sleep(1500);
-            WriteLine("Welcome to Dice Roll, " + PlayerName + "! " + "Press any key to roll the dice...");
+            WriteLine("H-Hello. M-my name is DY-73.");
+            Thread.Sleep(1500);
+            WriteLine("I must've been asleep for some time.");
+            Thread.Sleep(1500);
+            WriteLine("\n(Press any key to continue...)");
+            ReadKey();
+            Clear();
+          
+
+            WriteLine("I am an AI f-from KEPLER 186F.");
+            Thread.Sleep(1000);
+            WriteLine("I am not sure how I got here.");
+            Thread.Sleep(500);
+            WriteLine("What is your name? (Type your name and press enter...)");
+            string? PlayerName = ReadLine();
+            Thread.Sleep(1000);
+            WriteLine("...");
+            Thread.Sleep(1500);
+            WriteLine("H-How nice to meet you, " + PlayerName + "!");
+            WriteLine("Would you like to play a game?");
+            WriteLine("Press any key to roll the dice...");
 
             RollDice(PlayerName);
         }
