@@ -42,58 +42,68 @@ namespace DY73DiceRoller
                 if (playerRoll1 == playerRoll2)
                 {
                     WriteLine("\n\t\t\t\tIt took you " + playerAttempts + " attempts to roll a matching pair!");
-                    Thread.Sleep(1000);
-                    WriteLine("\n\t\t\t\tNow it's m-my turn...");
+                    RunCPUDoubles(playerAttempts);
+                }
+            }
+        }
+
+        private static void RunCPUDoubles(int playerAttempts)
+        {
+            Thread.Sleep(1000);
+            WriteLine("\n\t\t\t\tNow it's m-my turn...");
+            {
+                Random cpuNumberGen = new Random();
+
+                int cpuRoll1 = 0;
+                int cpuRoll2 = 1;
+                int cpuAttempts = 0;
+
+                while (cpuRoll1 != cpuRoll2)
+                {
+                    cpuRoll1 = cpuNumberGen.Next(1, 7);
+                    cpuRoll2 = cpuNumberGen.Next(1, 7);
+
+                    Thread.Sleep(500);
+                    WriteLine("\t\t\t\tDY-73 rolled a " + cpuRoll1 + " and a " + cpuRoll2);
+
+                    cpuAttempts++;
+
+                    if (cpuRoll1 == cpuRoll2)
                     {
-                        Random cpuNumberGen = new Random();
-
-                        int cpuRoll1 = 0;
-                        int cpuRoll2 = 1;
-                        int cpuAttempts = 0;
-
-                        while (cpuRoll1 != cpuRoll2)
-                        {
-                            cpuRoll1 = cpuNumberGen.Next(1, 7);
-                            cpuRoll2 = cpuNumberGen.Next(1, 7);
-
-                            Thread.Sleep(500);
-                            WriteLine("\t\t\t\tDY-73 rolled a " + cpuRoll1 + " and a " + cpuRoll2);
-
-                            cpuAttempts++;
-
-                            if (cpuRoll1 == cpuRoll2)
-                            {
-                                WriteLine("\n\t\t\t\tIt took DY-73 " + cpuAttempts + " attempts to roll a matching pair!");
-                                if (playerAttempts == cpuAttempts)
-                                {
-                                    Thread.Sleep(1500);
-                                    WriteLine("\n\t\t\t\tThat's a draw!");
-                                    WriteLine("\n\t\t\t\t(Press any key to continue...)");
-                                    ReadKey();
-                                    ExitTheProgram();
-                                }
-                                else if (playerAttempts < cpuAttempts)
-                                {
-                                    Thread.Sleep(1500);
-                                    WriteLine("\n\t\t\t\tYou win!");
-                                    WriteLine("\n\t\t\t\t(Press any key to continue...)");
-                                    ReadKey();
-                                    ExitTheProgram();
-
-                                }
-                                else if (playerAttempts > cpuAttempts)
-                                {
-                                    Thread.Sleep(1500);
-                                    WriteLine("\n\t\t\t\tDY-73 wins!");
-                                    WriteLine("\n\t\t\t\t(Press any key to continue...)");
-                                    ReadKey();
-                                    ExitTheProgram();
-                                }
-                            }
-                        }
+                        WriteLine("\n\t\t\t\tIt took DY-73 " + cpuAttempts + " attempts to roll a matching pair!");
+                        DetermineWinner(playerAttempts, cpuAttempts);
                     }
                 }
             }
-        }      
+        }
+
+        private static void DetermineWinner(int playerAttempts, int cpuAttempts)
+        {
+            if (playerAttempts == cpuAttempts)
+            {
+                Thread.Sleep(1500);
+                WriteLine("\n\t\t\t\tThat's a draw!");
+                WriteLine("\n\t\t\t\t(Press any key to continue...)");
+                ReadKey();
+                ExitTheProgram();
+            }
+            else if (playerAttempts < cpuAttempts)
+            {
+                Thread.Sleep(1500);
+                WriteLine("\n\t\t\t\tYou win!");
+                WriteLine("\n\t\t\t\t(Press any key to continue...)");
+                ReadKey();
+                ExitTheProgram();
+
+            }
+            else if (playerAttempts > cpuAttempts)
+            {
+                Thread.Sleep(1500);
+                WriteLine("\n\t\t\t\tDY-73 wins!");
+                WriteLine("\n\t\t\t\t(Press any key to continue...)");
+                ReadKey();
+                ExitTheProgram();
+            }
+        }
     }
 }

@@ -30,7 +30,7 @@ namespace DY73DiceRoller
             RunPlayerNameScreen();
         }
 
-        public static void RunPlayerNameScreen()
+        private static void RunPlayerNameScreen()
         {
             WriteLine("\n\n\n\n\n\t\t\t\tI am an AI f-from KEPLER 186F.");
             Thread.Sleep(1500);
@@ -50,7 +50,7 @@ namespace DY73DiceRoller
             SelectGame();
         }
 
-        public static void SelectGame()
+        private static void SelectGame()
         {
             {
                 string prompt = "\n\n\n\n\n\t\t\t\tWhich game would you like to play?\n\t\t\t\t(Select a game and press enter...)";
