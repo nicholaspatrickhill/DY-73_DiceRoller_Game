@@ -6,8 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using DiceRoller;
 using static System.Console;
-using static DY73DiceRoller.DoublesDiceGame;
+using static DY73DiceRoller.DoublesGame;
 using static DY73DiceRoller.HighDieGame;
+using static DY73DiceRoller.BestOfFiveGame;
 
 namespace DY73DiceRoller
 {
@@ -40,7 +41,7 @@ namespace DY73DiceRoller
             Write("\t\t\t\t");
             string? PlayerName = ReadLine();
             Thread.Sleep(1500);
-            WriteLine("\t\t\t\t...");
+            WriteLine("\n\t\t\t\t...");
             Thread.Sleep(1500);
             WriteLine("\n\t\t\t\tH-How nice to meet you, " + PlayerName + "!");
             WriteLine("\t\t\t\tLet's play a game!");
@@ -54,7 +55,7 @@ namespace DY73DiceRoller
         {
             {
                 string prompt = "\n\n\n\n\n\t\t\t\tWhich game would you like to play?\n\t\t\t\t(Select a game and press enter...)";
-                string[] options = { "\n\t\t\t\tHigh Die", "\t\t\t\tDoubles" };
+                string[] options = { "\n\t\t\t\tHigh Die", "\t\t\t\tDoubles", "\t\t\t\tBest of Five" };
 
                 Menu exitMenu = new Menu(prompt, options);
                 int selectedIndex = exitMenu.Run();
@@ -69,7 +70,12 @@ namespace DY73DiceRoller
                     case 1:
                         Thread.Sleep(1000);
                         Clear();
-                        RunDoublesDiceGame();
+                        RunDoublesGame();
+                        break;
+                    case 2: 
+                        Thread.Sleep(1000);
+                        Clear();
+                        RunBestOfFiveGame();
                         break;
                 }
             }

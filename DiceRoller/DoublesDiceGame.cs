@@ -9,9 +9,9 @@ using static DY73DiceRoller.ConsoleMessages;
 
 namespace DY73DiceRoller
 {
-    public class DoublesDiceGame
+    public class DoublesGame
     {
-        public static void RunDoublesDiceGame()
+        public static void RunDoublesGame()
         {
             ForegroundColor= ConsoleColor.Green;
             WriteLine("\n\n\n\n\n\t\t\t\tL-let's play Doubles!");
