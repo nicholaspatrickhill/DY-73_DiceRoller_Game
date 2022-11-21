@@ -94,7 +94,7 @@ namespace DY73DiceRoller
                     case 1:
                         Thread.Sleep(1000);
                         ForegroundColor = ConsoleColor.Green;
-                        WriteLine("\n\t\t\t\tGoodbye!\n\n\n\n\n");
+                        WriteLine("\n\t\t\t\tGoodbye\n\n\n\n\n");
                         Environment.Exit(0);
                         break;
                 }

@@ -18,7 +18,7 @@ namespace DY73DiceRoller
             WriteLine("\t\t\t\tRoll the dice. Then it's m-my turn.");
             WriteLine("\t\t\t\tWhoever rolls the highest number wins!");
             WriteLine("\n\t\t\t\t(Press enter to roll the dice...)");
-            while (Console.ReadKey(true).Key != ConsoleKey.Enter);         
+            while (Console.ReadKey(true).Key != ConsoleKey.Enter) ;
 
             Random numberGen = new Random();
 
@@ -36,6 +36,11 @@ namespace DY73DiceRoller
             cpuRoll = numberGen.Next(1, 7);
             WriteLine("\n\t\t\t\tDY-73 rolled a " + cpuRoll);
 
+            DetermineHighDieWinner(playerRoll, cpuRoll);
+        }
+
+        private static void DetermineHighDieWinner(int playerRoll, int cpuRoll)
+        {
             if (playerRoll == cpuRoll)
             {
                 Thread.Sleep(1500);
@@ -52,7 +57,7 @@ namespace DY73DiceRoller
                 ReadKey();
                 ExitTheProgram();
             }
-            else if (playerRoll > cpuRoll) 
+            else if (playerRoll > cpuRoll)
             {
                 Thread.Sleep(1500);
                 WriteLine("\n\t\t\t\tYou win!");

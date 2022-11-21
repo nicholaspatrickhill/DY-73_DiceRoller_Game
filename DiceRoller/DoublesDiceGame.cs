@@ -42,12 +42,12 @@ namespace DY73DiceRoller
                 if (playerRoll1 == playerRoll2)
                 {
                     WriteLine("\n\t\t\t\tIt took you " + playerAttempts + " attempts to roll a matching pair!");
-                    RunCPUDoubles(playerAttempts);
+                    RunCPUDoublesTurn(playerAttempts);
                 }
             }
         }
 
-        private static void RunCPUDoubles(int playerAttempts)
+        private static void RunCPUDoublesTurn(int playerAttempts)
         {
             Thread.Sleep(1000);
             WriteLine("\n\t\t\t\tNow it's m-my turn...");
@@ -71,13 +71,13 @@ namespace DY73DiceRoller
                     if (cpuRoll1 == cpuRoll2)
                     {
                         WriteLine("\n\t\t\t\tIt took DY-73 " + cpuAttempts + " attempts to roll a matching pair!");
-                        DetermineWinner(playerAttempts, cpuAttempts);
+                        DetermineDoublesWinner(playerAttempts, cpuAttempts);
                     }
                 }
             }
         }
 
-        private static void DetermineWinner(int playerAttempts, int cpuAttempts)
+        private static void DetermineDoublesWinner(int playerAttempts, int cpuAttempts)
         {
             if (playerAttempts == cpuAttempts)
             {
