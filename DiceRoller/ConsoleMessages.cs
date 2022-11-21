@@ -43,7 +43,7 @@ namespace DY73DiceRoller
             WriteLine("\t\t\t\t...");
             Thread.Sleep(1500);
             WriteLine("\n\t\t\t\tH-How nice to meet you, " + PlayerName + "!");
-            WriteLine("\t\t\t\tWould you like to play a game?");
+            WriteLine("\t\t\t\tLet's play a game!");
             Thread.Sleep(1500);
             WriteLine("\n\t\t\t\t(Press any key to continue...)");
             ReadKey();

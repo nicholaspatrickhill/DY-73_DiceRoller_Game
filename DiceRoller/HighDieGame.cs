@@ -18,8 +18,7 @@ namespace DY73DiceRoller
             WriteLine("\t\t\t\tRoll the dice. Then it's m-my turn.");
             WriteLine("\t\t\t\tWhoever rolls the highest number wins!");
             WriteLine("\n\t\t\t\t(Press enter to roll the dice...)");
-            while (Console.ReadKey(true).Key != ConsoleKey.Enter)           
-            Beep();
+            while (Console.ReadKey(true).Key != ConsoleKey.Enter);         
 
             Random numberGen = new Random();
 
@@ -29,6 +28,7 @@ namespace DY73DiceRoller
             playerRoll = numberGen.Next(1, 7);
 
             Thread.Sleep(500);
+            Beep();
             WriteLine("\n\t\t\t\tYou rolled a " + playerRoll);
             Thread.Sleep(1000);
             WriteLine("\n\t\t\t\tNow it's m-my turn...");

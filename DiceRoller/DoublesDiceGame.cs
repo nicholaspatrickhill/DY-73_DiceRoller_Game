@@ -28,13 +28,13 @@ namespace DY73DiceRoller
 
             while (playerRoll1 != playerRoll2)
             {
-                while (Console.ReadKey(true).Key != ConsoleKey.Enter)
-                Beep();
+                while (Console.ReadKey(true).Key != ConsoleKey.Enter);
 
                 playerRoll1 = numberGen.Next(1, 7);
                 playerRoll2 = numberGen.Next(1, 7);
 
                 Thread.Sleep(500);
+                Beep();
                 WriteLine("\t\t\t\tYou rolled a " + playerRoll1 + " and a " + playerRoll2);
 
                 playerAttempts++;
