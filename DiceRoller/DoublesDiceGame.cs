@@ -19,6 +19,9 @@ namespace DY73DiceRoller
             WriteLine("\t\t\t\tRoll the dice until you get d-doubles. Then it's m-my turn.");
             WriteLine("\t\t\t\tWhoever g-gets doubles in the fewest number of rolls wins!");
             WriteLine("\n\t\t\t\t(Press enter to roll the dice...)");
+            while (Console.ReadKey(true).Key != ConsoleKey.Enter);
+            Clear();
+            WriteLine("\n\n\n\n\n");
 
             Random numberGen = new Random();
 
@@ -28,14 +31,14 @@ namespace DY73DiceRoller
 
             while (playerRoll1 != playerRoll2)
             {
-                while (Console.ReadKey(true).Key != ConsoleKey.Enter);
-
                 // player rolls their dice:
                 playerRoll1 = numberGen.Next(1, 7);
                 playerRoll2 = numberGen.Next(1, 7);
                 Thread.Sleep(500);
                 Beep();
                 WriteLine("\t\t\t\tYou rolled a " + playerRoll1 + " and a " + playerRoll2);
+                Thread.Sleep(500);
+                while (Console.ReadKey(true).Key != ConsoleKey.Enter) ;
 
                 // attempts to roll doubles are recorded:
                 playerAttempts++;
@@ -43,6 +46,9 @@ namespace DY73DiceRoller
                 if (playerRoll1 == playerRoll2)
                 {
                     WriteLine("\n\t\t\t\tIt took you " + playerAttempts + " attempts to roll a matching pair!");
+                    Thread.Sleep(1500);
+                    WriteLine("\n\t\t\t\t(Press any key to continue...)");
+                    ReadKey();
                     RunCPUDoublesTurn(playerAttempts);
                 }
             }
@@ -50,8 +56,9 @@ namespace DY73DiceRoller
 
         private static void RunCPUDoublesTurn(int playerAttempts)
         {
+            Clear();
             Thread.Sleep(1000);
-            WriteLine("\n\t\t\t\tNow it's m-my turn...");
+            WriteLine("\n\n\n\n\n\t\t\t\tNow it's m-my turn...\n");
             {
                 Random cpuNumberGen = new Random();
 
@@ -73,6 +80,9 @@ namespace DY73DiceRoller
                     if (cpuRoll1 == cpuRoll2)
                     {
                         WriteLine("\n\t\t\t\tIt took DY-73 " + cpuAttempts + " attempts to roll a matching pair!");
+                        Thread.Sleep(1500);
+                        WriteLine("\n\t\t\t\t(Press any key to continue...)");
+                        ReadKey();
                         DetermineDoublesWinner(playerAttempts, cpuAttempts);
                     }
                 }
@@ -81,6 +91,11 @@ namespace DY73DiceRoller
 
         private static void DetermineDoublesWinner(int playerAttempts, int cpuAttempts)
         {
+            Clear();
+            Thread.Sleep(1000);
+            WriteLine("\n\n\n\n\n\t\t\t\tYou rolled doubles in " + playerAttempts + " turns.");
+            WriteLine("\t\t\t\tDY-73 rolled doubles in " + cpuAttempts + " turns.");
+
             // each player's attempts to roll doubles are compared to determine the winner of the game:
             if (playerAttempts == cpuAttempts)
             {
