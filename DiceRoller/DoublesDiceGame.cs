@@ -30,13 +30,14 @@ namespace DY73DiceRoller
             {
                 while (Console.ReadKey(true).Key != ConsoleKey.Enter);
 
+                // player rolls their dice:
                 playerRoll1 = numberGen.Next(1, 7);
                 playerRoll2 = numberGen.Next(1, 7);
-
                 Thread.Sleep(500);
                 Beep();
                 WriteLine("\t\t\t\tYou rolled a " + playerRoll1 + " and a " + playerRoll2);
 
+                // attempts to roll doubles are recorded:
                 playerAttempts++;
 
                 if (playerRoll1 == playerRoll2)
@@ -60,12 +61,13 @@ namespace DY73DiceRoller
 
                 while (cpuRoll1 != cpuRoll2)
                 {
+                    // cpu rolls their dice:
                     cpuRoll1 = cpuNumberGen.Next(1, 7);
                     cpuRoll2 = cpuNumberGen.Next(1, 7);
-
                     Thread.Sleep(500);
                     WriteLine("\t\t\t\tDY-73 rolled a " + cpuRoll1 + " and a " + cpuRoll2);
 
+                    // attempts to roll doubles are recorded:
                     cpuAttempts++;
 
                     if (cpuRoll1 == cpuRoll2)
@@ -79,6 +81,7 @@ namespace DY73DiceRoller
 
         private static void DetermineDoublesWinner(int playerAttempts, int cpuAttempts)
         {
+            // each player's attempts to roll doubles are compared to determine the winner of the game:
             if (playerAttempts == cpuAttempts)
             {
                 Thread.Sleep(1500);

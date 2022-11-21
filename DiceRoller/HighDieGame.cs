@@ -22,17 +22,16 @@ namespace DY73DiceRoller
 
             Random numberGen = new Random();
 
+            // player rolls their die:
             int playerRoll;
-            int cpuRoll;
-
             playerRoll = numberGen.Next(1, 7);
-
             Thread.Sleep(500);
             Beep();
             WriteLine("\n\t\t\t\tYou rolled a " + playerRoll);
-            Thread.Sleep(1000);
-            WriteLine("\n\t\t\t\tNow it's m-my turn...");
 
+            //cpu rolls their die:
+            Thread.Sleep(1000);
+            int cpuRoll;
             cpuRoll = numberGen.Next(1, 7);
             WriteLine("\n\t\t\t\tDY-73 rolled a " + cpuRoll);
 
@@ -41,6 +40,7 @@ namespace DY73DiceRoller
 
         private static void DetermineHighDieWinner(int playerRoll, int cpuRoll)
         {
+            // each player's die roll is compared to determine the winner of the game:
             if (playerRoll == cpuRoll)
             {
                 Thread.Sleep(1500);
