@@ -29,7 +29,8 @@ namespace DY73DiceRoller
 
             for (int i = 0; i < 5; i++)
             {
-                while (Console.ReadKey(true).Key != ConsoleKey.Enter) ;
+                while (Console.ReadKey(true).Key != ConsoleKey.Enter);
+                Beep();
                 Clear();
 
                 Random numberGen = new Random();
@@ -38,7 +39,6 @@ namespace DY73DiceRoller
                 playerRoll = numberGen.Next(1, 7);
                 playerRoll2 = numberGen.Next(1, 7);
                 Thread.Sleep(500);
-                Beep();
                 WriteLine("\n\n\n\n\n\t\t\t\tYou rolled a " + playerRoll + " and a " + playerRoll2);
 
                 // cpu rolls their dice:
@@ -87,6 +87,7 @@ namespace DY73DiceRoller
                 WriteLine("\n\t\t\t\tYou win Best of Five!");
                 WriteLine("\n\t\t\t\t(Press any key to continue...)");
                 ReadKey();
+                Beep();
                 ExitTheProgram();
             }
             else if (playerScore < cpuScore)
@@ -95,6 +96,7 @@ namespace DY73DiceRoller
                 WriteLine("\n\t\t\t\tDY-73 wins Best of Five!");
                 WriteLine("\n\t\t\t\t(Press any key to continue...)");
                 ReadKey();
+                Beep();
                 ExitTheProgram();
             }
             else if (playerScore == cpuScore)
@@ -103,6 +105,7 @@ namespace DY73DiceRoller
                 WriteLine("\n\t\t\t\tThe game ended in a draw!");
                 WriteLine("\n\t\t\t\t(Press any key to continue...)");
                 ReadKey();
+                Beep();
                 ExitTheProgram();
             }
         }

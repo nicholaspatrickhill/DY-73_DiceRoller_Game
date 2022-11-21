@@ -20,6 +20,7 @@ namespace DY73DiceRoller
             WriteLine("\t\t\t\tWhoever g-gets doubles in the fewest number of rolls wins!");
             WriteLine("\n\t\t\t\t(Press enter to roll the dice...)");
             while (Console.ReadKey(true).Key != ConsoleKey.Enter);
+            Beep();
             Clear();
             WriteLine("\n\n\n\n\n");
 
@@ -35,10 +36,10 @@ namespace DY73DiceRoller
                 playerRoll1 = numberGen.Next(1, 7);
                 playerRoll2 = numberGen.Next(1, 7);
                 Thread.Sleep(500);
-                Beep();
                 WriteLine("\t\t\t\tYou rolled a " + playerRoll1 + " and a " + playerRoll2);
                 Thread.Sleep(500);
-                while (Console.ReadKey(true).Key != ConsoleKey.Enter) ;
+                while (Console.ReadKey(true).Key != ConsoleKey.Enter);
+                Beep();
 
                 // attempts to roll doubles are recorded:
                 playerAttempts++;
@@ -49,6 +50,7 @@ namespace DY73DiceRoller
                     Thread.Sleep(1500);
                     WriteLine("\n\t\t\t\t(Press any key to continue...)");
                     ReadKey();
+                    Beep();
                     RunCPUDoublesTurn(playerAttempts);
                 }
             }
@@ -83,6 +85,7 @@ namespace DY73DiceRoller
                         Thread.Sleep(1500);
                         WriteLine("\n\t\t\t\t(Press any key to continue...)");
                         ReadKey();
+                        Beep();
                         DetermineDoublesWinner(playerAttempts, cpuAttempts);
                     }
                 }
@@ -103,6 +106,7 @@ namespace DY73DiceRoller
                 WriteLine("\n\t\t\t\tThat's a draw!");
                 WriteLine("\n\t\t\t\t(Press any key to continue...)");
                 ReadKey();
+                Beep();
                 ExitTheProgram();
             }
             else if (playerAttempts < cpuAttempts)
@@ -111,6 +115,7 @@ namespace DY73DiceRoller
                 WriteLine("\n\t\t\t\tYou win!");
                 WriteLine("\n\t\t\t\t(Press any key to continue...)");
                 ReadKey();
+                Beep();
                 ExitTheProgram();
 
             }
@@ -120,6 +125,7 @@ namespace DY73DiceRoller
                 WriteLine("\n\t\t\t\tDY-73 wins!");
                 WriteLine("\n\t\t\t\t(Press any key to continue...)");
                 ReadKey();
+                Beep();
                 ExitTheProgram();
             }
         }

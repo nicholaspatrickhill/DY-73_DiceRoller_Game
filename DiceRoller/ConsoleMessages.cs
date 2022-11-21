@@ -27,6 +27,7 @@ namespace DY73DiceRoller
             Thread.Sleep(1500);
             WriteLine("\n\t\t\t\t(Press any key to continue...)");
             ReadKey();
+            Beep();
             Clear();
             RunPlayerNameScreen();
         }
@@ -40,6 +41,7 @@ namespace DY73DiceRoller
             WriteLine("\n\t\t\t\tWhat is your name? (Type your name and press enter...)");
             Write("\t\t\t\t");
             string? PlayerName = ReadLine();
+            Beep();
             Thread.Sleep(1500);
             WriteLine("\n\t\t\t\t...");
             Thread.Sleep(1500);
@@ -48,6 +50,7 @@ namespace DY73DiceRoller
             Thread.Sleep(1500);
             WriteLine("\n\t\t\t\t(Press any key to continue...)");
             ReadKey();
+            Beep();
             SelectGame();
         }
 
@@ -63,16 +66,19 @@ namespace DY73DiceRoller
                 switch (selectedIndex)
                 {
                     case 0:
+                        Beep();
                         Thread.Sleep(1000);
                         Clear();
                         RunHighDieGame();
                         break;
                     case 1:
+                        Beep();
                         Thread.Sleep(1000);
                         Clear();
                         RunDoublesGame();
                         break;
-                    case 2: 
+                    case 2:
+                        Beep();
                         Thread.Sleep(1000);
                         Clear();
                         RunBestOfFiveGame();
@@ -93,11 +99,13 @@ namespace DY73DiceRoller
                 switch (selectedIndex)
                 {
                     case 0:
+                        Beep();
                         Thread.Sleep(1000);
                         Clear();
                         SelectGame();
                         break; 
                     case 1:
+                        Beep();
                         Thread.Sleep(1000);
                         ForegroundColor = ConsoleColor.Green;
                         WriteLine("\n\t\t\t\tGoodbye\n\n\n\n\n");

@@ -19,6 +19,8 @@ namespace DY73DiceRoller
             WriteLine("\t\t\t\tWhoever rolls the highest number wins!");
             WriteLine("\n\t\t\t\t(Press enter to roll the dice...)");
             while (Console.ReadKey(true).Key != ConsoleKey.Enter);
+            Beep();
+            Clear();
 
             Random numberGen = new Random();
 
@@ -26,11 +28,10 @@ namespace DY73DiceRoller
             int playerRoll;
             playerRoll = numberGen.Next(1, 7);
             Thread.Sleep(500);
-            Beep();
-            WriteLine("\n\t\t\t\tYou rolled a " + playerRoll);
+            WriteLine("\n\n\n\n\n\t\t\t\tYou rolled a " + playerRoll);
 
             //cpu rolls their die:
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
             int cpuRoll;
             cpuRoll = numberGen.Next(1, 7);
             WriteLine("\n\t\t\t\tDY-73 rolled a " + cpuRoll);
@@ -47,6 +48,7 @@ namespace DY73DiceRoller
                 WriteLine("\n\t\t\t\tThat's a draw!");
                 WriteLine("\n\t\t\t\t(Press any key to continue...)");
                 ReadKey();
+                Beep();
                 ExitTheProgram();
             }
             else if (playerRoll < cpuRoll)
@@ -55,6 +57,7 @@ namespace DY73DiceRoller
                 WriteLine("\n\t\t\t\tDY-73 wins!");
                 WriteLine("\n\t\t\t\t(Press any key to continue...)");
                 ReadKey();
+                Beep();
                 ExitTheProgram();
             }
             else if (playerRoll > cpuRoll)
@@ -63,6 +66,7 @@ namespace DY73DiceRoller
                 WriteLine("\n\t\t\t\tYou win!");
                 WriteLine("\n\t\t\t\t(Press any key to continue...)");
                 ReadKey();
+                Beep();
                 ExitTheProgram();
             }
         }
