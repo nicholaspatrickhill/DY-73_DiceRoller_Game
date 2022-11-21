@@ -14,11 +14,11 @@ namespace DY73DiceRoller
         public static void RunDoublesDiceGame()
         {
             ForegroundColor= ConsoleColor.Green;
-            WriteLine("L-let's play Doubles!");
+            WriteLine("\n\n\n\n\n\t\t\t\tL-let's play Doubles!");
             Thread.Sleep(1000);
-            WriteLine("Roll the dice until you get d-doubles. Then it's m-my turn.");
-            WriteLine("Whoever g-gets doubles in the fewest number of rolls wins!");
-            WriteLine("\n(Press enter to roll the dice...)");
+            WriteLine("\t\t\t\tRoll the dice until you get d-doubles. Then it's m-my turn.");
+            WriteLine("\t\t\t\tWhoever g-gets doubles in the fewest number of rolls wins!");
+            WriteLine("\n\t\t\t\t(Press enter to roll the dice...)");
 
             Random numberGen = new Random();
 
@@ -28,22 +28,22 @@ namespace DY73DiceRoller
 
             while (playerRoll1 != playerRoll2)
             {
-                ReadKey();
+                while (Console.ReadKey(true).Key != ConsoleKey.Enter)
                 Beep();
 
                 playerRoll1 = numberGen.Next(1, 7);
                 playerRoll2 = numberGen.Next(1, 7);
 
                 Thread.Sleep(500);
-                WriteLine("You rolled a " + playerRoll1 + " and a " + playerRoll2);
+                WriteLine("\t\t\t\tYou rolled a " + playerRoll1 + " and a " + playerRoll2);
 
                 playerAttempts++;
 
                 if (playerRoll1 == playerRoll2)
                 {
-                    WriteLine("\nIt took you " + playerAttempts + " attempts to roll a matching pair!");
+                    WriteLine("\n\t\t\t\tIt took you " + playerAttempts + " attempts to roll a matching pair!");
                     Thread.Sleep(1000);
-                    WriteLine("\nNow it's m-my turn...");
+                    WriteLine("\n\t\t\t\tNow it's m-my turn...");
                     {
                         Random cpuNumberGen = new Random();
 
@@ -57,26 +57,26 @@ namespace DY73DiceRoller
                             cpuRoll2 = cpuNumberGen.Next(1, 7);
 
                             Thread.Sleep(500);
-                            WriteLine("DY-73 rolled a " + cpuRoll1 + " and a " + cpuRoll2);
+                            WriteLine("\t\t\t\tDY-73 rolled a " + cpuRoll1 + " and a " + cpuRoll2);
 
                             cpuAttempts++;
 
                             if (cpuRoll1 == cpuRoll2)
                             {
-                                WriteLine("\nIt took DY-73 " + cpuAttempts + " attempts to roll a matching pair!");
+                                WriteLine("\n\t\t\t\tIt took DY-73 " + cpuAttempts + " attempts to roll a matching pair!");
                                 if (playerAttempts == cpuAttempts)
                                 {
                                     Thread.Sleep(1500);
-                                    WriteLine("\nThat's a draw!");
-                                    WriteLine("\n(Press any key to continue...)");
+                                    WriteLine("\n\t\t\t\tThat's a draw!");
+                                    WriteLine("\n\t\t\t\t(Press any key to continue...)");
                                     ReadKey();
                                     ExitTheProgram();
                                 }
                                 else if (playerAttempts < cpuAttempts)
                                 {
                                     Thread.Sleep(1500);
-                                    WriteLine("\nYou win!");
-                                    WriteLine("\n(Press any key to continue...)");
+                                    WriteLine("\n\t\t\t\tYou win!");
+                                    WriteLine("\n\t\t\t\t(Press any key to continue...)");
                                     ReadKey();
                                     ExitTheProgram();
 
@@ -84,8 +84,8 @@ namespace DY73DiceRoller
                                 else if (playerAttempts > cpuAttempts)
                                 {
                                     Thread.Sleep(1500);
-                                    WriteLine("\nDY-73 wins!");
-                                    WriteLine("\n(Press any key to continue...)");
+                                    WriteLine("\n\t\t\t\tDY-73 wins!");
+                                    WriteLine("\n\t\t\t\t(Press any key to continue...)");
                                     ReadKey();
                                     ExitTheProgram();
                                 }

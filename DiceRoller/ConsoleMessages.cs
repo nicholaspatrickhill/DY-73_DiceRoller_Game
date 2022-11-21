@@ -16,15 +16,15 @@ namespace DY73DiceRoller
         public static void RunIntroScreen()
         {
             ForegroundColor = ConsoleColor.Green;
-            WriteLine("...");
+            WriteLine("\n\n\n\n\n\t\t\t\t...");
             Thread.Sleep(1000);
-            WriteLine(".....");
+            WriteLine("\t\t\t\t.....");
             Thread.Sleep(1500);
-            WriteLine("H-Hello. M-my name is DY-73.");
+            WriteLine("\n\t\t\t\tH-Hello. M-my name is DY-73.");
             Thread.Sleep(1500);
-            WriteLine("\nI must've been asleep for some time.");
+            WriteLine("\n\t\t\t\tI must've been asleep for some time.");
             Thread.Sleep(1500);
-            WriteLine("\n(Press any key to continue...)");
+            WriteLine("\n\t\t\t\t(Press any key to continue...)");
             ReadKey();
             Clear();
             RunPlayerNameScreen();
@@ -32,19 +32,20 @@ namespace DY73DiceRoller
 
         public static void RunPlayerNameScreen()
         {
-            WriteLine("I am an AI f-from KEPLER 186F.");
+            WriteLine("\n\n\n\n\n\t\t\t\tI am an AI f-from KEPLER 186F.");
             Thread.Sleep(1500);
-            WriteLine("I am not sure how I got here.");
+            WriteLine("\t\t\t\tI am not sure how I got here.");
             Thread.Sleep(1500);
-            WriteLine("\nWhat is your name? (Type your name and press enter...)");
+            WriteLine("\n\t\t\t\tWhat is your name? (Type your name and press enter...)");
+            Write("\t\t\t\t");
             string? PlayerName = ReadLine();
             Thread.Sleep(1500);
-            WriteLine("...");
+            WriteLine("\t\t\t\t...");
             Thread.Sleep(1500);
-            WriteLine("H-How nice to meet you, " + PlayerName + "!");
-            WriteLine("Would you like to play a game?");
+            WriteLine("\n\t\t\t\tH-How nice to meet you, " + PlayerName + "!");
+            WriteLine("\t\t\t\tWould you like to play a game?");
             Thread.Sleep(1500);
-            WriteLine("\n(Press any key to continue...)");
+            WriteLine("\n\t\t\t\t(Press any key to continue...)");
             ReadKey();
             SelectGame();
         }
@@ -52,8 +53,8 @@ namespace DY73DiceRoller
         public static void SelectGame()
         {
             {
-                string prompt = "Which game would you like to play?\n(Select a game and press enter...)";
-                string[] options = { "\nHigh Die", "Doubles" };
+                string prompt = "\n\n\n\n\n\t\t\t\tWhich game would you like to play?\n\t\t\t\t(Select a game and press enter...)";
+                string[] options = { "\n\t\t\t\tHigh Die", "\t\t\t\tDoubles" };
 
                 Menu exitMenu = new Menu(prompt, options);
                 int selectedIndex = exitMenu.Run();
@@ -77,8 +78,8 @@ namespace DY73DiceRoller
         public static void ExitTheProgram()
         {
             {
-                string prompt = "Would you like to play another g-game?\n(Select yes or no and press enter...)";
-                string[] options = { "\nyes", "no" };
+                string prompt = "\n\n\n\n\n\t\t\t\tWould you like to play another g-game?\n\t\t\t\t(Select yes or no and press enter...)";
+                string[] options = { "\n\t\t\t\tyes", "\t\t\t\tno" };
 
                 Menu exitMenu = new Menu(prompt, options);
                 int selectedIndex = exitMenu.Run();
@@ -93,7 +94,7 @@ namespace DY73DiceRoller
                     case 1:
                         Thread.Sleep(1000);
                         ForegroundColor = ConsoleColor.Green;
-                        WriteLine("\nGoodbye!\n\n\n\n\n");
+                        WriteLine("\n\t\t\t\tGoodbye!\n\n\n\n\n");
                         Environment.Exit(0);
                         break;
                 }
