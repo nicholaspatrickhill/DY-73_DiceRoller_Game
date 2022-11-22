@@ -60,8 +60,8 @@ namespace DY73DiceRoller
                 string prompt = "\n\n\n\n\n\t\t\t\tWhich game would you like to play?\n\t\t\t\t(Select a game and press enter...)";
                 string[] options = { "\n\t\t\t\tHigh Die", "\t\t\t\tDoubles", "\t\t\t\tBest of Five" };
 
-                Menu exitMenu = new Menu(prompt, options);
-                int selectedIndex = exitMenu.Run();
+                Menu selectGameMenu = new Menu(prompt, options);
+                int selectedIndex = selectGameMenu.Run();
 
                 switch (selectedIndex)
                 {
