@@ -65,7 +65,7 @@ ExitTheProgram prompts the user to return to the SelectGame menu to continue pla
 ExitTheProgram initializes a new instance of the menu class.
 The user's input executes cases in a switch that return the player to the SelectGame menu or terminates the program with an exit method.
 
-**DESIGN AND NARRATIVE ELEMENTS:** The application uses tabs and newlines in the WriteLine methods to for clarity and aesthetics.
+**DESIGN AND NARRATIVE ELEMENTS:** The application uses tabs and newlines in the WriteLine methods for clarity and aesthetics.
 Thread.Sleep is called throughout to enhance the computer character's dialogue and give it personality.
 Console.Beep is used to provide the user with audible feedback each time that they make a selection.
 
