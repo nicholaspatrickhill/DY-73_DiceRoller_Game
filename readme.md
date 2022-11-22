@@ -69,8 +69,6 @@ The user's input executes cases in a switch that return the player to the Select
 Thread.Sleep is called throughout to enhance the computer character's dialogue and give it personality.
 Console.Beep is used to provide the user with audible feedback each time that they make a selection.
 
-### INSTRUCTIONS
-
 
 
 
