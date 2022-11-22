@@ -57,7 +57,7 @@ namespace DY73DiceRoller
         private static void SelectGame()
         {
             {
-                string prompt = "\n\n\n\n\n\t\t\t\tWhich game would you like to play?\n\t\t\t\t(Select a game and press enter...)";
+                string prompt = "\n\n\n\n\n\t\t\t\tWhich game would you like to play?\n\t\t\t\t(Select a game with the up and down arrows and press enter...)";
                 string[] options = { "\n\t\t\t\tHigh Die", "\t\t\t\tDoubles", "\t\t\t\tBest of Five" };
 
                 Menu selectGameMenu = new Menu(prompt, options);
@@ -90,7 +90,7 @@ namespace DY73DiceRoller
         public static void ExitTheProgram()
         {
             {
-                string prompt = "\n\n\n\n\n\t\t\t\tWould you like to play another g-game?\n\t\t\t\t(Select yes or no and press enter...)";
+                string prompt = "\n\n\n\n\n\t\t\t\tWould you like to play another g-game?\n\t\t\t\t(Select yes or no with the up and down arrows and press enter...)";
                 string[] options = { "\n\t\t\t\tyes", "\t\t\t\tno" };
 
                 Menu exitMenu = new Menu(prompt, options);

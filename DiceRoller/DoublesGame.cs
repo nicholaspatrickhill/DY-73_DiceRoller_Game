@@ -117,7 +117,6 @@ namespace DY73DiceRoller
                 ReadKey();
                 Beep();
                 ExitTheProgram();
-
             }
             else if (playerAttempts > cpuAttempts)
             {
