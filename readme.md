@@ -1,4 +1,4 @@
-**DY-73 Dice Roller** is a console application that presents multiple games of chance played against the computer.
+**DY-73 Dice Roller** is a console application that presents multiple games of chance that can be played against the computer.
 The affable computer character is named DY-73 and presents as a lost AI from a distant world.
 
 ### NOTES
